@@ -1,5 +1,5 @@
 //Placeholders...
-const seedShoes = require('./seed-seeds');
+const seedShoes = require('./seed');
 const seedUsers = require('./user-seeds');
 const seedComments = require('./comment-seeds');
 
@@ -10,7 +10,7 @@ const seedAll = async () => {
   console.log('\n----- DATABASE SYNCED -----\n');
 
 
-  await seedPosts();
+  await seedShoes();
   console.log('\n----- SHOES SEEDED -----\n');
 
   await seedUsers();
