@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 DROP DATABASE IF EXISTS shoes_db;
 
 CREATE DATABASE shoes_db;
@@ -21,3 +22,7 @@ CREATE DATABASE shoes_db;
 --     createdAt TIMESTAMP NOT NULL,
 --     PRIMARY KEY (buyers_cart_id)
 -- )
+=======
+DROP DATABASE IF EXISTS myTreasures_db;
+CREATE myTreasures_db;
+>>>>>>> 35f7b84c56592ead2df3957a4f35ee2aad93dacb
