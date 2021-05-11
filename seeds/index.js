@@ -1,5 +1,5 @@
 //Placeholders...
-const seedShoes = require('./post-seeds');
+const seedShoes = require('./seed-seeds');
 const seedUsers = require('./user-seeds');
 const seedComments = require('./comment-seeds');
 
