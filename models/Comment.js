@@ -19,11 +19,11 @@ Comment.init(
           key: 'id'
         }
       },
-      whiskey_id: {
+      shoes_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-          model: 'whiskey',
+          model: 'shoes',
           key: 'id'
         }
       },

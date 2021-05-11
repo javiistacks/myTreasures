@@ -1,6 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-const { truncate } = require('./User');
+const { truncate } = require('./user');
 
 // create our Post model
 class Shoes extends Model {
@@ -69,7 +69,7 @@ Shoes.init(
       sequelize,
       freezeTableName: true,
       underscored: true,
-      modelName: 'Shoes'
+      modelName: 'shoes'
     }
   );
 

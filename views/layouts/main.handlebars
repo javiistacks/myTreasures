@@ -1,19 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Registry</title>
-    <link rel="stylesheet" href="/css/jass.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <title>Shoe Inventory</title>
 </head>
-
 <body>
+    <!-- Header -->
+    <header>
+        <h1><i class="fas fa-shoe-print"></i> 👟👠 Shoe Inventory</h1>
+        <nav class="navbar navbar-expand-sm navbar-light">
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav m-auto">
+                <a class="nav-item nav-link" href="/">Home</a>
+                {{!-- <a class="nav-item nav-link" href="/browse">Browse</a> --}}
 
-    <h1>Hello World!</h1>
+                {{#if loggedIn}}
+                    <a class="nav-item nav-link" href="/inventory">Inventory</a>
+                    <a id="logout" class="nav-item nav-link">Logout</a>
+                {{else}}
+                    <a class="nav-item nav-link" href="/login">Login</a>
+                {{/if}}
+              </div>
+            </div>
+          </nav>    
+    </header>
 
+    <!-- Hero -->
+    <div class="hero">
+        <img src="/images/imagesgoeshere.jpg" class="img-fluid max-width: 100% height: auto" alt="">
+    </div>
+
+    <!-- Main -->
+    <main class="p-3">
+        {{{ body }}}
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        {{>footer}}
+    </footer>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" > </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" ></script>     
+{{#if loggedIn}}
+<script src="/javascript/logout.js"></script>
+{{/if}}
+{{!-- <script src="/javascript/script.js"></script> --}}
 </body>
-
-
-
 </html>
