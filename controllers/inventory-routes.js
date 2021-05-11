@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 const { Shoes, User, Vote, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
-// Get all Shoess for /inventory
+// Get all Shoes for /inventory
 router.get('/', withAuth, (req, res) => {
     console.log(req.session);
     Shoes.findAll({
@@ -35,7 +35,7 @@ router.get('/', withAuth, (req, res) => {
         ]
       })
         .then(dbShoesData => {
-          const Shoess = dbShoesData.map(Shoes => Shoes.get({ plain: true }));
+          const Shoes = dbShoesData.map(Shoes => Shoes.get({ plain: true }));
           res.render('inventory', {Shoess, loggedIn: true});
         })
         .catch(err => {
