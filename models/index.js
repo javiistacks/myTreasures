@@ -1,7 +1,7 @@
-const User = require('./User');
-const Shoes = require('./Shoes');
-const Comment = require('./Comment');
-const Vote = require('./Vote');
+const User = require('./user');
+const Shoes = require('./shoes');
+const Comment = require('./comment');
+const Vote = require('./vote');
 
 User.hasMany(Shoes, {
     foreignKey: 'user_id'
