@@ -17,12 +17,12 @@ router.get('/', withAuth, (req, res) => {
           'price_paid',
           'resell_value',
           'notes',
-          [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE Shoes.id = vote.Shoes_id)'), 'vote_count']
+          [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE shoes.id = vote.shoes_id)'), 'vote_count']
         ],
         include: [
           {
             model: Comment,
-            attributes: ['id', 'comment_text', 'Shoes_id', 'user_id', 'created_at'],
+            attributes: ['id', 'comment_text', 'shoes_id', 'user_id', 'created_at'],
             include: {
               model: User,
               attributes: ['username']
@@ -36,7 +36,7 @@ router.get('/', withAuth, (req, res) => {
       })
         .then(dbShoesData => {
           const Shoes = dbShoesData.map(Shoes => Shoes.get({ plain: true }));
-          res.render('inventory', {Shoess, loggedIn: true});
+          res.render('inventory', {shoes, loggedIn: true});
         })
         .catch(err => {
           console.log(err);
@@ -45,7 +45,7 @@ router.get('/', withAuth, (req, res) => {
   });
 
 // Get Shoes by ID
-router.get('/Shoes/:id', (req, res) => {
+router.get('/shoes/:id', (req, res) => {
     Shoes.findOne({
       where: {
         id: req.params.id
@@ -57,12 +57,12 @@ router.get('/Shoes/:id', (req, res) => {
         'price_paid',
         'resell_value',
         'notes',
-        [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE Shoes.id = vote.Shoes_id)'), 'vote_count']
+        [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE shoes.id = vote.Shoes_id)'), 'vote_count']
       ],
       include: [
         {
           model: Comment,
-          attributes: ['id', 'comment_text', 'Shoes_id', 'user_id', 'created_at'],
+          attributes: ['id', 'comment_text', 'shoes_id', 'user_id', 'created_at'],
           include: {
             model: User,
             attributes: ['username']
@@ -76,13 +76,13 @@ router.get('/Shoes/:id', (req, res) => {
     })
       .then(dbShoesData => {
         if (!dbShoesData) {
-          res.status(404).json({ message: 'No Shoes found with this id' });
+          res.status(404).json({ message: 'No shoes found with this id' });
           return;
         }
 
         const Shoes = dbShoesData.get({ plain: true });
 
-        res.render('single-Shoes', {
+        res.render('single-shoes', {
             Shoes,
             loggedIn: req.session.loggedIn
           });
