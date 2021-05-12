@@ -12,12 +12,12 @@ router.get('/', (req, res) => {
         'price_paid',
         'resell_value',
         'notes',
-        [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE shoes.id = vote.Shoes_id)'), 'vote_count']
+        [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE Shoes.id = vote.Shoes_id)'), 'vote_count']
       ],
       include: [
         {
           model: Comment,
-          attributes: ['id', 'comment_text', 'shoes_id', 'user_id', 'created_at'],
+          attributes: ['id', 'comment_text', 'Shoes_id', 'user_id', 'created_at'],
           include: {
             model: User,
             attributes: ['username']
@@ -30,7 +30,7 @@ router.get('/', (req, res) => {
       ]
     })
       .then(dbShoesData => {
-        const Shoes = dbShoesData.map(Shoes => Shoes.get({ plain: true }));
+        const Shoess = dbShoesData.map(Shoes => Shoes.get({ plain: true }));
         res.render('homepage', {
             Shoess,
             loggedIn: req.session.loggedIn
@@ -55,52 +55,52 @@ router.get('/login', (req, res) => {
 
 
 // Get Shoes by ID
-router.get('/Shoes/:id', (req, res) => {
-    Shoes.findOne({
-      where: {
-        id: req.params.id
-      },
-      attributes: [
-        'id',
-        'name',
-        'shoe_size',
-        'price_paid',
-        'resell_value',
-        'notes',
-        [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE shoes.id = vote.shoes_id)'), 'vote_count']
-      ],
-      include: [
-        {
-          model: Comment,
-          attributes: ['id', 'comment_text', 'shoes_id', 'user_id', 'created_at'],
-          include: {
-            model: User,
-            attributes: ['username']
-          }
-        },
-        {
-          model: User,
-          attributes: ['username']
-        }
-      ]
-    })
-      .then(dbShoesData => {
-        if (!dbShoesData) {
-          res.status(404).json({ message: 'No shoes found with this id' });
-          return;
-        }
+// router.get('/Shoes/:id', (req, res) => {
+//     Shoes.findOne({
+//       where: {
+//         id: req.params.id
+//       },
+//       attributes: [
+//         'id',
+//         'name',
+//         'shoe_size',
+//         'price_paid',
+//         'resell_value',
+//         'notes',
+//         [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE Shoes.id = vote.Shoes_id)'), 'vote_count']
+//       ],
+//       include: [
+//         {
+//           model: Comment,
+//           attributes: ['id', 'comment_text', 'Shoes_id', 'user_id', 'created_at'],
+//           include: {
+//             model: User,
+//             attributes: ['username']
+//           }
+//         },
+//         {
+//           model: User,
+//           attributes: ['username']
+//         }
+//       ]
+//     })
+//       .then(dbShoesData => {
+//         if (!dbShoesData) {
+//           res.status(404).json({ message: 'No Shoes found with this id' });
+//           return;
+//         }
 
-        const Shoes = dbShoesData.get({ plain: true });
+//         const Shoes = dbShoesData.get({ plain: true });
 
-        res.render('single-Shoes', {
-            Shoes,
-            loggedIn: req.session.loggedIn
-          });
-      })
-      .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-      });
-});
+//         res.render('single-Shoes', {
+//             Shoes,
+//             loggedIn: req.session.loggedIn
+//           });
+//       })
+//       .catch(err => {
+//         console.log(err);
+//         res.status(500).json(err);
+//       });
+// });
 
 module.exports = router;

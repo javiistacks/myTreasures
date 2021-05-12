@@ -20,7 +20,7 @@ class Shoes extends Model {
                 'price_paid',
                 'resell_value',
                 'user_id',
-                [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE shoes.id = vote.Shoes_id)'), 'vote_count']
+                [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE Shoes.id = vote.Shoes_id)'), 'vote_count']
             ]
           });
         });

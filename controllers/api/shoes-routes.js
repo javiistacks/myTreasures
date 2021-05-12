@@ -3,6 +3,16 @@ const { User, Shoes, Comment, Vote } = require('../../models');
 const sequelize = require('../../config/connection');
 const withAuth = require('../../utils/auth');
 
+
+router.get('/create',(req,res) => {
+  console.log("trying this out")
+    try{
+      res.render('createpost');
+    }catch(e){
+      console.log("error with shoe render");
+    }
+
+})
 // Get all Shoess
 router.get('/', (req, res) => {
     Shoes.findAll({
@@ -13,12 +23,12 @@ router.get('/', (req, res) => {
             'price_paid',
             'resell_value',
             'notes',
-            [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE shoes.id = vote.Shoes_id)'), 'vote_count']
+            [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE Shoes.id = vote.Shoes_id)'), 'vote_count']
           ],
           include: [
             {
               model: Comment,
-              attributes: ['id', 'comment_text', 'shoes_id', 'user_id', 'created_at'],
+              attributes: ['id', 'comment_text', 'Shoes_id', 'user_id', 'created_at'],
               include: {
                 model: User,
                 attributes: ['username']
@@ -38,7 +48,8 @@ router.get('/', (req, res) => {
 });
 
 // Get Shoes by ID
-router.get('/:id', (req, res) => {
+router.get('/getshoe/:id', (req, res) => {
+  console.log("getting a shoe")
     Shoes.findOne({
         where: {
           id: req.params.id
@@ -50,7 +61,7 @@ router.get('/:id', (req, res) => {
             'price_paid',
             'resell_value',
             'notes',
-            [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE shoes.id = vote.Shoes_id)'), 'vote_count']
+            [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE Shoes.id = vote.Shoes_id)'), 'vote_count']
           ],
         include: [
             {
@@ -59,7 +70,7 @@ router.get('/:id', (req, res) => {
               },
             {
                 model: Comment,
-                attributes: ['id', 'comment_text', 'shoes_id', 'user_id', 'created_at'],
+                attributes: ['id', 'comment_text', 'Shoes_id', 'user_id', 'created_at'],
                 include: {
                   model: User,
                   attributes: ['username']
@@ -70,7 +81,7 @@ router.get('/:id', (req, res) => {
     })
       .then(dbShoesData => {
         if (!dbShoesData) {
-          res.status(404).json({ message: 'No shoes found with this id' });
+          res.status(404).json({ message: 'No Shoes found with this id' });
           return;
         }
         res.json(dbShoesData);
@@ -83,6 +94,7 @@ router.get('/:id', (req, res) => {
 
 // Post Shoes
 router.post('/', withAuth, (req, res) => {
+  console.log("create a shoe");
     Shoes.create({
       name: req.body.name,
       shoe_size: req.body.shoe_size,

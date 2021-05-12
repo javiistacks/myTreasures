@@ -28,7 +28,7 @@ router.get('/:id', (req, res) => {
             },
             {
                 model: Comment,
-                attributes: ['id', 'shoes_id', 'comment_text', 'user_id', 'created_at'],
+                attributes: ['id', 'Shoes_id', 'comment_text', 'user_id', 'created_at'],
                 include: {
                   model: Shoes,
                   attributes: ['name']
@@ -38,7 +38,7 @@ router.get('/:id', (req, res) => {
                 model: Shoes,
                 attributes: ['title'],
                 through: Vote,
-                as: 'voted_shoes'
+                as: 'voted_Shoes'
               }
           ]
 

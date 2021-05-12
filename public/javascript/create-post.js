@@ -1,15 +1,19 @@
-async function loginFormHandler(event) {
+async function postFormHandler(event) {
     event.preventDefault();
   
-    const username = document.querySelector('#username-login').value.trim();
-    const password = document.querySelector('#password-login').value.trim();
+    const name = document.querySelector('#name').value.trim();
+    const shoe_size = document.querySelector('#shoe_size').value.trim();
+    const price_paid = document.querySelector('#price_paid').value.trim();
+    const resell_value = document.querySelector('#resell_value').value.trim();
   
-    if (username && password) {
-      const response = await fetch('/api/users/login', {
+    if (name && shoe_size && price_paid && resell_value) {
+      const response = await fetch('/shoes/', {
         method: 'post',
         body: JSON.stringify({
-          username,
-          password
+          name,
+          shoe_size,
+          price_paid,
+          resell_value
         }),
         headers: { 'Content-Type': 'application/json' }
       });
@@ -22,4 +26,4 @@ async function loginFormHandler(event) {
     }
   }
 
-  document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
+  document.querySelector('#createshoeform').addEventListener('submit', postFormHandler);
