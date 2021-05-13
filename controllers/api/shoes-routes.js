@@ -95,6 +95,9 @@ router.get('/getshoe/:id', (req, res) => {
 // Post Shoes
 router.post('/', withAuth, (req, res) => {
   console.log("create a shoe");
+
+  // do cloudinary stuff
+  
     Shoes.create({
       name: req.body.name,
       shoe_size: req.body.shoe_size,

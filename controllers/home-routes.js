@@ -30,9 +30,10 @@ router.get('/', (req, res) => {
       ]
     })
       .then(dbShoesData => {
-        const Shoess = dbShoesData.map(Shoes => Shoes.get({ plain: true }));
+        const Shoes = dbShoesData.map(Shoes => Shoes.get({ plain: true }));
+        console.log('all the dhoes', Shoes)
         res.render('homepage', {
-            Shoess,
+           shoes:  Shoes,
             loggedIn: req.session.loggedIn
           });
       })
