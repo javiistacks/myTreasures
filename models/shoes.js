@@ -14,6 +14,7 @@ class Shoes extends Model {
               id: body.shoes_id
             },
             attributes: [
+                'pic_url',
                 'id',
                 'name',
                 'shoe_size',
@@ -38,7 +39,7 @@ Shoes.init(
       },
       // We talked about limiting the number of preselected...will need to work in to code
 
-      image_url:{
+      pic_url:{
       type: DataTypes.STRING,
 
       },

@@ -7,6 +7,7 @@ router.get('/', (req, res) => {
     Shoes.findAll({
       attributes: [
         'id',
+        'pic_url',
         'name',
         'shoe_size',
         'price_paid',

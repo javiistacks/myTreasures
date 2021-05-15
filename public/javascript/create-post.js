@@ -1,7 +1,7 @@
 // async function postFormHandler(event) {
 //     event.preventDefault();
   
-
+    
 //     // const image = document.querySelector('#photos');
 //     const name = document.querySelector('#name').value.trim();
 //     const shoe_size = document.querySelector('#shoe_size').value.trim();
@@ -11,12 +11,16 @@
 //     // console.log(document.getElementById("photos").files[0])
 
 //     // var formData = await new FormData();
+
+//     // console.log(formData)
+
 //     // formData.append("hello", "hello")
 //     // await formData.append("photos", document.getElementById("photos").files[0])
 //     // console.log(formData)
 
+//     console.log('About ot save!!! new shoe here is the pic url', picurl)
 
-//     if (formData && name && shoe_size && price_paid && resell_value) {
+//     if (formData && name && shoe_size && price_paid && resell_value && picurl) {
 //       const response = await fetch('/shoes/', {
 //         method: 'post',
 //         body: JSON.stringify({
@@ -24,7 +28,8 @@
 //           name,
 //           shoe_size,
 //           price_paid,
-//           resell_value
+//           resell_value,
+//           picurl
 //         }),
 //         headers: { 'Content-Type': 'application/json' }
 //       });
@@ -47,14 +52,15 @@ async function postFormHandler(event) {
   const price_paid = document.querySelector('#price_paid').value.trim();
   const resell_value = document.querySelector('#resell_value').value.trim();
 
-  if (name && shoe_size && price_paid && resell_value) {
+  if (name && shoe_size && price_paid && resell_value && pic_url) {
     const response = await fetch('/shoes/', {
       method: 'post',
       body: JSON.stringify({
         name,
         shoe_size,
         price_paid,
-        resell_value
+        resell_value,
+        pic_url
       }),
       headers: { 'Content-Type': 'application/json' }
     });
