@@ -1,5 +1,5 @@
 
-header {
+/* header {
     text-align: center;
   }
   
@@ -29,4 +29,284 @@ header {
   a {
     text-decoration: none;
     color: black;
+  } */
+
+  header {
+    text-align: center;
+  }
+  
+  body {
+    background-image: url(../stylesheets/nikeshoes.jpg);
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-color: #a7a6ba;
+    background-blend-mode: screen;
+  }
+  .navbar-nav a,
+#contactLink {
+  color: #7e7e7e !important;
+  font-size: 150%;
+  margin: 0 25px;
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+.nav-link:hover,
+#contactLink {
+  font-weight: 600;
+  border-bottom: 1px solid #ffffff;
+  margin-bottom: -1px;
+}
+
+#contactLink {
+  text-decoration: none;
+}
+
+.landingPageBody {
+  padding: 20px;
+  font-family: "Poppins", sans-serif;
+}
+.homepageWrapper {
+  font-size: 20pt;
+  color: #a7a6ba;
+  background-color: #a7a6ba;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 20px;
+}
+  main {
+    background-color: #a7a6ba;
+    padding: 0 0 15px 0;
+  }
+  .title {
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(255, 255, 255);
+  }
+.form-container {
+  background: rgb(255, 255, 255);
+  padding: 30px;
+  border-radius: 10px;
+  margin-top: 20%;
+}
+.input-field i {
+  text-align: center;
+  line-height: 40px;
+  color: rgb(255, 255, 255);
+  font-size: 1.1rem;
+}
+.input-field {
+  max-width: 380px;
+  width: 100%;
+  height: 40px;
+  background-color: rgb(255, 255, 255);
+  margin: 10px 0;
+  border-radius: 40px;
+  display: grid;
+  grid-template-columns: 15% 85%;
+  padding: .4rem;
+}
+.input-field input {
+  background: none;
+  outline: none;
+  border: none;
+  line-height: 1;
+  font-weight: 550;
+  font-size: 1.1rem;
+  color: #333;
+}
+.btn {
+  width: 175px;
+  height: 55px;
+  border: none;
+  outline: none;
+  border-radius: 55px;
+  cursor: pointer;
+  color: #a7a6ba;
+  text-transform: uppercase;
+  font-weight: 550;
+  background: #a7a6ba;
+  margin: 10px 0;
+}
+.btn:hover {
+  color: #ffffff;
+}
+#signupBtn {
+  padding-top: 12px;
+}
+.searchBtn {
+  border-radius: 10px;
+  width: 50px;
+}
+  footer {
+    text-align: center; 
+    text-decoration: none;
+  }
+  
+  .comment-body {
+    height: 120px;
+    width: 590px;
+  }
+  
+  #shoes-pic {
+    width: 200px;
+    height: 300px;
+  }
+  .inv-head {
+    font-weight: bold;
+  }
+  
+  a {
+    text-decoration: none;
+    color: rgb(75, 73, 73);
+  }
+  @media screen and (max-width: 1000px) { 
+    .navbar-nav a {
+      color: #999999 !important;
+      font-size: 150%;
+      margin: 0;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+  
+  .search-form input {
+    height: 100%;
+    background: transparent;
+    border: 0;
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    height: 100%;
+    font-size: 1rem;
+  }
+  
+  .search-form select {
+    background: transparent;
+    border: 0;
+    padding: 1rem;
+    height: 100%;
+    font-size: 1rem;
+  }
+  
+  .search-form select:focus {
+    border: 0;
+  }
+  
+  .search-form button {
+    height: 100%;
+    width: 100%;
+    font-size: 1rem;
+  }
+  
+  .search-form button svg {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .search-body {
+    margin-bottom: 1.5rem;
+  }
+  
+  .search-body .search-filters .filter-list {
+    margin-bottom: 1.3rem;
+  }
+  
+  .search-body .search-filters .filter-list .title {
+    color: #666969;
+    margin-bottom: 1rem;
+  }
+  
+  .search-body .search-filters .filter-list .filter-text {
+    color: #4d505c;
+  }
+  
+  .search-body .search-result .result-header {
+    margin-bottom: 2rem;
+  }
+  
+  .search-body .search-result .result-header .records {
+    color: #666969;
+  }
+  
+  .search-body .search-result .result-header .result-actions {
+    text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .search-body .search-result .result-header .result-actions .result-sorting {
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-body
+    .search-result
+    .result-header
+    .result-actions
+    .result-sorting
+    span {
+    flex-shrink: 0;
+    font-size: 0.8125rem;
+  }
+  
+  .search-body
+    .search-result
+    .result-header
+    .result-actions
+    .result-sorting
+    select {
+    color: #a7a6ba;
+  }
+  
+  .search-body
+    .search-result
+    .result-header
+    .result-actions
+    .result-sorting
+    select
+    option {
+    color: #a7a6ba;
+  }
+  
+  @media (min-width: 768px) and (max-width: 991.98px) {
+    .search-body .search-filters {
+      display: flex;
+    }
+    .search-body .search-filters .filter-list {
+      margin-right: 1rem;
+    }
+  }
+  
+  .card-margin {
+    margin-bottom: 1.875rem;
+  }
+  
+  @media (min-width: 992px) {
+    .col-lg-2 {
+      flex: 0 0 16.66667%;
+      max-width: 16.66667%;
+    }
+  }
+  
+  .card-margin {
+    margin-bottom: 1.875rem;
+  }
+  .card {
+    border: 0;
+    box-shadow: 0px 0px 10px 0px rgba(82, 63, 105, 0.1);
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(82, 63, 105, 0.1);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(82, 63, 105, 0.1);
+    -ms-box-shadow: 0px 0px 10px 0px rgba(82, 63, 105, 0.1);
+  }
+  .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #ffffff;
+    background-clip: border-box;
+    border: 1px solid #dbc7fa;
+    border-radius: 8px;
   }

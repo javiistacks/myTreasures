@@ -97,7 +97,9 @@ router.post('/', withAuth, (req, res) => {
   console.log("create a shoe");
 
   // do cloudinary stuff
-  
+  console.log("================================",req.body)
+
+
     Shoes.create({
       name: req.body.name,
       shoe_size: req.body.shoe_size,
