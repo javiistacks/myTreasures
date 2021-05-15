@@ -34,9 +34,9 @@ Git - As with all projects, Git remains invaluable to the creation, development,
 
 ## Contributors
 
-Javiann Marrero
-Haneen Nasereddin
-Alicia Hughes
+- Javiann Marrero
+- Haneen Nasereddin
+- Alicia Hughes
 
 ## Future Development
 
