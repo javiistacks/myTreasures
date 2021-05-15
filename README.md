@@ -2,7 +2,7 @@
 
 ## About My Treasures
 
-My Treasures is a full-stack web application that allows users to search for and/or purchase used high-end and designer shoes in their local area. It is the perfect platform to sell your gently used high-end shoe, or to find high-end shoes at a bargain price.  My Treasures is easy to use, just sign up, then post a picture and information about your shoe.
+My Treasures is a full-stack web application that allows users to buy or sell used high-end and designer shoes in their local area. It is the perfect platform to sell your gently used high-end shoe, or to find high-end shoes at a bargain price.  My Treasures is easy to use, just sign up, then post a picture and information about your shoe.
 
 ## Why Use My Treasures?
 
