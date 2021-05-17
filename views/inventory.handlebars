@@ -1,7 +1,7 @@
 <main>
     <div class="card text-center">
   <div class="card-header">
-    Shoe Inventory
+    <h2>Shoe Inventory</h2>
   </div>
   <div class="card-body">
     {{!-- <h5 class="card-title">Special title treatment</h5> --}}
@@ -9,10 +9,7 @@
     <a  href="/shoes/create"><button class="btn btn-primary" type="button">Create shoes</button></a>
 </div>
 
-        <div class="p-3">
-            <h2 class="text-center text-light">Inventory Shoes</h2>
-            <div class="container animate__animated animate__fadeInUp">
-            <ol class="container ">
+       
             {{#each shoes as |shoe|}}
             {{>inventory-cards}}
             {{/each}}
