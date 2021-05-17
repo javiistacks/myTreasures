@@ -16,6 +16,7 @@ async function postFormHandler(event) {
         price_paid,
         resell_value,
         pic_url,
+        notes
       }),
       headers: { 'Content-Type': 'application/json' }
     });
