@@ -7,7 +7,7 @@ async function postFormHandler(event) {
   const resell_value = document.querySelector('#resell_value').value.trim();
   const notes = document.querySelector('#notes').value.trim();
 
-  if (name && shoe_size && price_paid && resell_value && pic_url) {
+  if (name && shoe_size && price_paid && resell_value && pic_url && notes) {
     const response = await fetch('/shoes/', {
       method: 'post',
       body: JSON.stringify({
@@ -16,7 +16,6 @@ async function postFormHandler(event) {
         price_paid,
         resell_value,
         pic_url,
-        notes
       }),
       headers: { 'Content-Type': 'application/json' }
     });
