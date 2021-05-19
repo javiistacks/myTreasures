@@ -1,5 +1,4 @@
 # Shoe Inventory
-![Shoes gif3](https://user-images.githubusercontent.com/77088703/118759199-2f862f80-b836-11eb-8dcd-1b1559ded78a.gif)
 
 ## About Shoe Inventory
 
