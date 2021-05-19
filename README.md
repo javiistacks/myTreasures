@@ -37,5 +37,5 @@ https://fierce-oasis-62967.herokuapp.com/
 
 ## Future Development
 
-The next phase of development will include cookies to keep track of the data of the users that are buying and selling
-heroku test....
+The next phase of development will include cookies to keep track of the data of the users that are buying and selling.  We will also implement private messaging capability so that buyers and sellers are able to communicate with each other.  Lastly, we will add a payment system so that transactions can be handled through the Shoe Inventory application.
+
